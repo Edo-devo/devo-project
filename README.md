@@ -1,2 +1,6 @@
-# devo-project
-test scripts on project
+<<<<<<< HEAD
+Hotfix Logig
+=======
+Project description
+New feature logic
+>>>>>>> feature/new-text
