@@ -24,7 +24,7 @@ while True:
         with open(LOG_FILE, "a") as f:
             f.write(f"{time.ctime()} - ERROR: {e}\n")
 
-        subprocess.run(["systemctl", "restart", "nginx"])
+        subprocess.run(["sudo", "systemctl", "restart", "nginx"])
 
         send_alert(f"Сайт упал → перезапущен\nОшибка: {e}")
 
