@@ -4,7 +4,7 @@ URL = "http://localhost"
 LOG_FILE = "/home/admin/watchdog.log"
 
 TOKEN = "8720397267:AAFqBU_vahEpBR1Qm4TDvwdFpr-d_xdRak0"
-CHAT_ID = "8720397267"
+CHAT_ID = "280709449"
 
 
 def send_alert(msg):
