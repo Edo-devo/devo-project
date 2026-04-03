@@ -1,8 +1,8 @@
-import requests, time
+import requests, time, os
 
 URL = "http://localhost"
-TOKEN = "8720397267:AAFqBU_vahEpBR1Qm4TDvwdFpr-d_xdRak0"
-CHAT_ID = "280709449"
+TOKEN = os.getenv(TG_TOKEN)
+CHAT_ID = os.getenv(TG_CHAT_ID)
 
 
 def send_alert(massage):
