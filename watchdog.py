@@ -5,18 +5,17 @@ LOG_FILE = "/home/admin/watchdog.log"
 
 TOKEN = os.getenv("TG_TOKEN")
 CHAT_ID = os.getenv("TG_CHAT_ID")
-print("TOKEN:", TOKEN)
-print("CHAT_ID:", CHAT_ID)
 
-print("TOKEN:", TOKEN)
-print("CHAT_ID:", CHAT_ID)
 
 def send_alert(msg):
-    r = requests.post(
-        f"https://api.telegram.org/bot{TOKEN}/sendMessage",
-        data={"chat_id": CHAT_ID, "text": msg}
-    )
-    print("TG:", r.status_code, r.text)
+    try:
+        requests.post(
+            f"https://api.telegram.org/bot{TOKEN}/sendMessage",
+            data={"chat_id": CHAT_ID, "text": msg}
+        )
+    except:
+        pass  # чтобы не падал сервис
+
 
 while True:
     try:
@@ -29,7 +28,6 @@ while True:
             f.write(f"{time.ctime()} - ERROR: {e}\n")
 
         subprocess.run(["sudo", "systemctl", "restart", "nginx"])
-
-        send_alert(f"Сайт упал → перезапущен\nОшибка: {e}")
+        send_alert(f"🚨 Сайт упал → перезапущен\nОшибка: {e}")
 
     time.sleep(60)
