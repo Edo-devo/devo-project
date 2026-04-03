@@ -3,8 +3,10 @@ import requests, time, subprocess, os
 URL = "http://localhost"
 LOG_FILE = "/home/admin/watchdog.log"
 
-TOKEN = os.getenv(TG_TOKEN)
-CHAT_ID = os.getenv(TG_CHAT_ID)
+TOKEN = os.getenv("TG_TOKEN")
+CHAT_ID = os.getenv("TG_CHAT_ID")
+print("TOKEN:", TOKEN)
+print("CHAT_ID:", CHAT_ID)
 
 print("TOKEN:", TOKEN)
 print("CHAT_ID:", CHAT_ID)

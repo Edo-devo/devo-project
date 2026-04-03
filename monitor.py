@@ -1,8 +1,8 @@
 import requests, time, os
 
 URL = "http://localhost"
-TOKEN = os.getenv(TG_TOKEN)
-CHAT_ID = os.getenv(TG_CHAT_ID)
+TOKEN = os.getenv("TG_TOKEN")
+CHAT_ID = os.getenv("TG_CHAT_ID")
 
 print("TOKEN:", TOKEN)
 print("CHAT_ID:", CHAT_ID)
