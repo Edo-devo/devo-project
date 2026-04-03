@@ -5,6 +5,8 @@ LOG_FILE = "/home/admin/watchdog.log"
 
 TOKEN = os.getenv(TG_TOKEN)
 CHAT_ID = os.getenv(TG_CHAT_ID)
+print("TOKEN:", TOKEN)
+print("CHAT_ID:", CHAT_ID)
 
 
 def send_alert(msg):
